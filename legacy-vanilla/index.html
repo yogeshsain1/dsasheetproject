@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Mastery Sheet – Track Your Coding Interview Journey</title>
+  <meta name="description" content="Comprehensive DSA problem sheet organized by patterns and topics for interview preparation. Track your progress and master data structures & algorithms." />
+  <meta property="og:title" content="DSA Mastery Sheet – Track Your Coding Interview Journey" />
+  <meta property="og:description" content="Master DSA pattern by pattern. Curated problems, progress tracking, and everything you need to crack technical interviews." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>
+          </svg>
+        </div>
+        <span>DSA Mastery</span>
+      </a>
+      <div class="nav-actions">
+        <div class="total-progress-pill" id="nav-progress">
+          <span class="pill-dot"></span>
+          <span id="nav-progress-text">0 / 350 solved</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Pattern-Based DSA Sheet
+          </div>
+          <h1 class="hero-title">Master DSA for<br /><span class="gradient-text">Coding Interviews</span></h1>
+          <p class="hero-subtitle">Track your journey through 350+ curated problems, organized by patterns and topics. Crack FAANG interviews with a structured approach.</p>
+
+          <!-- Stats Row -->
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-num" id="stat-total">350+</div>
+              <div class="stat-label">Problems</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Topics</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="stat-solved">0</div>
+              <div class="stat-label">Solved</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="stat-percent">0%</div>
+              <div class="stat-label">Progress</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sheet Body -->
+    <section class="sheet-section">
+      <div class="container">
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab-pattern" data-tab="pattern">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            Pattern-Wise
+          </button>
+          <button class="tab-btn" id="tab-lastmin" data-tab="lastmin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Last Minute 100
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+          <div class="search-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search problems, topics..." autocomplete="off" />
+            <kbd class="search-kbd">⌘K</kbd>
+          </div>
+          <div class="filter-btns">
+            <div class="dropdown-wrap" id="diffDropWrap">
+              <button class="filter-btn" id="diffDropBtn">
+                Difficulty
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dropdown-menu" id="diffDropMenu">
+                <label class="dropdown-item"><input type="checkbox" value="Easy" class="diff-check" /> <span class="badge badge-easy">Easy</span></label>
+                <label class="dropdown-item"><input type="checkbox" value="Medium" class="diff-check" /> <span class="badge badge-medium">Medium</span></label>
+                <label class="dropdown-item"><input type="checkbox" value="Hard" class="diff-check" /> <span class="badge badge-hard">Hard</span></label>
+              </div>
+            </div>
+            <div class="dropdown-wrap" id="topicDropWrap">
+              <button class="filter-btn" id="topicDropBtn">
+                Topic
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dropdown-menu" id="topicDropMenu">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern View -->
+        <div id="view-pattern" class="view-active">
+          <div class="view-header">
+            <h2 class="view-title">Pattern Wise Sheet</h2>
+            <p class="view-sub">Master data structures and algorithms topic by topic</p>
+          </div>
+          <div id="topics-container" class="topics-container"></div>
+        </div>
+
+        <!-- Last Minute 100 View -->
+        <div id="view-lastmin" class="view-hidden">
+          <div class="view-header">
+            <h2 class="view-title">Last Minute 100</h2>
+            <p class="view-sub">The most important 100 problems to revise before your interview</p>
+          </div>
+          <div id="lastmin-container" class="lastmin-container"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>
+              </svg>
+            </div>
+            <span>DSA Mastery</span>
+          </a>
+          <p class="footer-desc">Master data structures and algorithms with curated problem sheets. Track your progress and ace technical interviews.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#">Problem Sheet</a>
+          <a href="#">Last Minute 100</a>
+          <a href="#">Progress Tracker</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="https://leetcode.com" target="_blank" rel="noopener">LeetCode</a>
+          <a href="https://www.geeksforgeeks.org" target="_blank" rel="noopener">GeeksForGeeks</a>
+          <a href="https://codeforces.com" target="_blank" rel="noopener">Codeforces</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Built for competitive programmers. Track, practice, and excel.</p>
+        <p class="footer-copy">© 2025 DSA Mastery Sheet</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Problem Modal -->
+  <div class="modal-overlay" id="problemModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div>
+          <div class="modal-badges" id="modal-badges"></div>
+          <h3 class="modal-title" id="modal-title"></h3>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-progress-bar">
+          <div class="modal-progress-fill" id="modal-progress-fill"></div>
+        </div>
+        <p class="modal-progress-label" id="modal-progress-label">0 / 0 problems solved</p>
+        <div class="problems-list" id="problems-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

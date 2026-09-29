@@ -1,0 +1,19 @@
+{
+  "name": "dsa-mastery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DSA Mastery Sheet - Next.js & Express Monorepo",
+  "scripts": {
+    "dev": "concurrently -n \"server,client\" -c \"cyan,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "start": "concurrently -n \"server,client\" -c \"cyan,magenta\" \"npm start --prefix server\" \"npm start --prefix client\"",
+    "build": "npm run build --prefix client",
+    "build:export": "npm run build:export --prefix client",
+    "start:prod": "npm start --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}
